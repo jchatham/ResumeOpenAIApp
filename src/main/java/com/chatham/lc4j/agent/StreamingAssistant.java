@@ -1,4 +1,4 @@
-package com.chatham.lc4j.ai;
+package com.chatham.lc4j.agent;
 
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.spring.AiService;
