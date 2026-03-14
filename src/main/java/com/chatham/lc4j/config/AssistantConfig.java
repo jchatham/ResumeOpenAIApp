@@ -5,6 +5,7 @@ import dev.langchain4j.memory.ChatMemory;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.listener.ChatModelListener;
 import dev.langchain4j.model.openai.OpenAiStreamingChatModel;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,15 +15,12 @@ import static org.springframework.beans.factory.config.ConfigurableBeanFactory.S
 @Configuration
 public class AssistantConfig {
 
-/*
-   TODO get api key and switch over
-   @Bean
-    public OpenAiChatModel chatModel() {
-        return OpenAiChatModel.builder()
-                .apiKey(System.getenv("OPENAI_API_KEY"))
-                .modelName("gpt-4o-mini")
-                .build();
-    }    */
+    @Value("${base-url}")
+    private String baseUrl;
+    @Value("${api-key}")
+    private String apiKey;
+    @Value("${model-name}")
+    private String modelName;
 
     /**
      * Using demo endpoint from langchain4j.
@@ -31,18 +29,18 @@ public class AssistantConfig {
     @Bean
     public OpenAiChatModel chatModel() {
         return OpenAiChatModel.builder()
-                .baseUrl("http://langchain4j.dev/demo/openai/v1")
-                .apiKey("demo")
-                .modelName("gpt-4o-mini")
+                .baseUrl(baseUrl)
+                .apiKey(apiKey)
+                .modelName(modelName)
                 .build();
     }
 
     @Bean
     public OpenAiStreamingChatModel streamingChatModel() {
         return OpenAiStreamingChatModel.builder()
-                .baseUrl("http://langchain4j.dev/demo/openai/v1")
-                .apiKey("demo")
-                .modelName("gpt-4o-mini")
+                .baseUrl(baseUrl)
+                .apiKey(apiKey)
+                .modelName(modelName)
                 .build();
     }
 
