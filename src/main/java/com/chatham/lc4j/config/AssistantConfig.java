@@ -23,8 +23,8 @@ public class AssistantConfig {
     private String modelName;
 
     /**
-     * Using demo endpoint from langchain4j.
-     * @return The model.
+     * OpenAI API.
+     * @return OpenAI chat model.
      */
     @Bean
     public OpenAiChatModel chatModel() {
@@ -35,6 +35,10 @@ public class AssistantConfig {
                 .build();
     }
 
+    /**
+     * Streaming OpenAI API.
+     * @return Streaming OpenAI chat model.
+     */
     @Bean
     public OpenAiStreamingChatModel streamingChatModel() {
         return OpenAiStreamingChatModel.builder()
