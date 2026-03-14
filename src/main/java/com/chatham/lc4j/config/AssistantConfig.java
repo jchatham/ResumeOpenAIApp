@@ -36,14 +36,19 @@ import static org.springframework.beans.factory.config.ConfigurableBeanFactory.S
 @Configuration
 public class AssistantConfig {
 
+    //Demo from logchain4j's account
     @Value("${base-url}")
     private String baseUrl;
     @Value("${api-key}")
     private String apiKey;
-    @Value("${open.api.key}")
-    private String openApiKey;
     @Value("${model-name}")
     private String modelName;
+
+    //The real stuff - costs money
+    @Value("${open.api.key}")
+    private String openApiKey;
+    @Value("${open.api.model}")
+    private String openApiModel;
 
     private final Integer timeout = 60;
     private final Boolean logRequests = true;
@@ -101,9 +106,8 @@ public class AssistantConfig {
     EmbeddingModel embeddingModel() {
         return new OpenAiEmbeddingModel(
                 OpenAiEmbeddingModel.builder()
-                        .baseUrl(baseUrl)
                         .apiKey(openApiKey)
-                        .modelName(modelName)
+                        .modelName(openApiModel)
                         .timeout(Duration.ofSeconds(timeout))
                         .logRequests(logRequests)
                         .logResponses(logResponses));

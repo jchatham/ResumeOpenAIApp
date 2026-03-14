@@ -1,6 +1,9 @@
-﻿Jefferey Chatham Jeff.Chatham@gmail.com
+﻿Jefferey Chatham
+Email: Jeff.Chatham@gmail.com
 LinkedIn:https://www.linkedin.com/in/jeff-chatham-7337a1208/ 
-GitHub:https://github.com/jchatham 
+GitHub:https://github.com/jchatham
+Phone:(850) 445-7361
+
 Experience 
 Application Systems Programmer III | Florida Department of Environmental Protection | Tallahassee, FL June 2015 – November 2020
 ● Architected, developed, and maintained critical Java enterprise applications and PHP microservices for a large state agency. 
