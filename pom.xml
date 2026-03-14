@@ -8,8 +8,8 @@
     <groupId>com.chatham</groupId>
     <artifactId>lc4j</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-langchain4j-api</name>
-    <description>Spring Boot + OpenAPI + LangChain4j</description>
+    <name>springboot-langchain4j-openai-resume</name>
+    <description>OpenAI API Resume</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -59,18 +59,6 @@
             <version>${langchain4j.version}</version>
         </dependency>
 
-        <!-- Optional: embeddings and RAG -->
-        <!-- <dependency>
-            <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j-easy-rag</artifactId>
-            <version>${langchain4j.version}</version>
-        </dependency> -->
-
-<!--        <dependency>
-            <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j-easy-rag</artifactId>
-            <version>1.12.1-beta21</version>
-        </dependency>-->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-spring-boot-starter</artifactId>
