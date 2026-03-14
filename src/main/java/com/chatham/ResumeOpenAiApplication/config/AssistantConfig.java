@@ -12,7 +12,6 @@ import dev.langchain4j.model.chat.listener.ChatModelListener;
 import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 import dev.langchain4j.model.openai.OpenAiEmbeddingModel;
-import dev.langchain4j.model.openai.OpenAiStreamingChatModel;
 import dev.langchain4j.rag.content.retriever.ContentRetriever;
 import dev.langchain4j.rag.content.retriever.EmbeddingStoreContentRetriever;
 import dev.langchain4j.store.embedding.EmbeddingStore;
@@ -22,9 +21,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
-import org.springframework.core.io.ResourceLoader;
 
-import java.io.IOException;
 import java.time.Duration;
 
 import static dev.langchain4j.data.document.loader.ClassPathDocumentLoader.loadDocument;
@@ -84,8 +81,6 @@ public class AssistantConfig {
                 .logResponses(logResponses)
                 .build();
     }*/
-
-
     @Bean
     ContentRetriever contentRetriever(EmbeddingStore<TextSegment> embeddingStore, EmbeddingModel embeddingModel) {
         int maxResults = 1;
@@ -113,6 +108,7 @@ public class AssistantConfig {
 
     /**
      * In-memory embedding store against resume text file in documents
+     *
      * @param embeddingModel the embedding model.
      * @return embedding store.
      */
