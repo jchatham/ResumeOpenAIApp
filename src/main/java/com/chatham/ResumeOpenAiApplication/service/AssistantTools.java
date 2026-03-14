@@ -1,4 +1,4 @@
-package com.chatham.lc4j.service;
+package com.chatham.ResumeOpenAiApplication.service;
 
 import dev.langchain4j.agent.tool.Tool;
 import io.micrometer.observation.annotation.Observed;

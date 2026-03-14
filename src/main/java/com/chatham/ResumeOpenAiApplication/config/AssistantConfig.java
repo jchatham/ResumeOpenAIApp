@@ -1,6 +1,6 @@
-package com.chatham.lc4j.config;
+package com.chatham.ResumeOpenAiApplication.config;
 
-import com.chatham.lc4j.service.AiChatModelListener;
+import com.chatham.ResumeOpenAiApplication.service.AiChatModelListener;
 import dev.langchain4j.data.document.Document;
 import dev.langchain4j.data.document.DocumentSplitter;
 import dev.langchain4j.data.document.parser.TextDocumentParser;
@@ -22,12 +22,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.time.Duration;
 
 import static dev.langchain4j.data.document.loader.ClassPathDocumentLoader.loadDocument;
@@ -76,7 +73,7 @@ public class AssistantConfig {
      *
      * @return Streaming OpenAI chat model.
      */
-    @Bean
+/*    @Bean
     public OpenAiStreamingChatModel streamingChatModel() {
         return OpenAiStreamingChatModel.builder()
                 .baseUrl(baseUrl)
@@ -86,7 +83,7 @@ public class AssistantConfig {
                 .logRequests(logRequests)
                 .logResponses(logResponses)
                 .build();
-    }
+    }*/
 
 
     @Bean
@@ -117,15 +114,10 @@ public class AssistantConfig {
     /**
      * In-memory embedding store against resume text file in documents
      * @param embeddingModel the embedding model.
-     * @param resourceLoader default Spring resource loader.
      * @return embedding store.
-     * @throws IOException on error loading file.
      */
     @Bean
-    EmbeddingStore<TextSegment> resumeEmbeddingStore(EmbeddingModel embeddingModel,
-                                               ResourceLoader resourceLoader) throws IOException {
-
-
+    EmbeddingStore<TextSegment> resumeEmbeddingStore(EmbeddingModel embeddingModel) {
         //In memory embedding store.
         EmbeddingStore<TextSegment> embeddingStore = new InMemoryEmbeddingStore<>();
 

@@ -1,7 +1,7 @@
-package com.chatham.lc4j.controller;
+package com.chatham.ResumeOpenAiApplication.controller;
 
 
-import com.chatham.lc4j.agent.ResumeAssistant;
+import com.chatham.ResumeOpenAiApplication.agent.ResumeAssistant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
