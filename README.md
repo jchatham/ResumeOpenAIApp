@@ -1,5 +1,5 @@
 # ResumeOpenAIApp
-Springboot Langchain4j OpenAI using in-memory embeddings on my resume.
+Springboot Langchain4j OpenAI on my resume.
 
 Required to run: OPEN_API_KEY environmental variable must be set. 
 
